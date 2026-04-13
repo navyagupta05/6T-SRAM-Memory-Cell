@@ -44,7 +44,7 @@
 - **Q remains stable** (ideally no change)
 - Sense signal provides output
 
-### Bitline Behavior (Important)
+### Bitline Behavior
 - Bitline is first precharged to HIGH (≈ VDD)
 - During read:
   - If **Q = 0** → bitline discharges slightly
