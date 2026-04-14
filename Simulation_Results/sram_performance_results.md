@@ -1,21 +1,21 @@
 # SRAM Performance Results
 
 ## Power Consumption
-- **Pavg ≈ 57.1 µW**
+- **Pavg = 57.12 µW**
 - Negative sign indicates power drawn from VDD
 - Value is within expected range for **180 nm design**
 
 ---
 
 ## Write Delay
-- **t_write ≈ 10.46 ns**
+- **t_write = 10.46 ns**
 - Time taken for Q to update after write operation
 - Relatively higher → indicates scope for **write optimization**
 
 ---
 
 ## Read Delay
-- **t_read ≈ 0.93 ns**
+- **t_read = 0.93 ns**
 - Time for bitline/sense amplifier to detect stored data
 - Faster than write, as expected
 
