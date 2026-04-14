@@ -42,6 +42,12 @@ The 6T SRAM cell consists of:
 
 ---
 
+## Schematic
+
+![Schematic](LtSpice_Schematic/Schematic.png)
+
+---
+
 ## Tools Used
 
 | Tool | Purpose |
@@ -49,6 +55,12 @@ The 6T SRAM cell consists of:
 | LTspice | Circuit simulation and waveform analysis |
 | Microwind | Layout design and DRC verification |
 | Excel | SNM butterfly curve analysis |
+
+---
+
+## Waveform
+
+![Waveform](Simulation_Results/waveform.jpg)
 
 ---
 
@@ -106,7 +118,7 @@ A high cell ratio ensures a strong pull-down path, which improves read stability
 ### Pull-up Ratio (PR)
 
 ```
-PR = W_access / W_pull-up = 500 / 325 ≈ 1.54
+PR = W_pull-up / W_access = 325 / 500 ≈ 0.65
 ```
 
 This ratio ensures easier write operations and improves write ability.
@@ -129,15 +141,15 @@ Extracted using the butterfly curve method in Excel.
 
 ### Power Consumption
 
-- **Average Power:** ~57.1 µW
+- **Average Power:** = 57.12 µW
 - Includes dynamic and parasitic effects
 
 ### Delay
 
 | Parameter | Value |
 |-----------|-------|
-| Write Delay | ~10.46 ns |
-| Read Delay | ~0.93 ns |
+| Write Delay | = 10.46 ns |
+| Read Delay | = 0.93 ns |
 
 **Observations:**
 - Read is significantly faster than write
@@ -148,11 +160,19 @@ Extracted using the butterfly curve method in Excel.
 
 ## Layout Design (Microwind)
 
-The physical layout was implemented using 180 nm CMOS design rules with the following considerations:
+The physical layout was implemented for the SRAM cell using 180 nm CMOS design rules with the following considerations:
 
 - Symmetrical layout for device matching
 - Diffusion sharing used for area reduction
 - Proper placement of N-well contacts and substrate contacts
+
+---
+
+## Layout
+
+![Layout](Layout_Microwind/sram_layout.png)
+
+---
 
 ### Layout Area
 
@@ -160,7 +180,7 @@ The physical layout was implemented using 180 nm CMOS design rules with the foll
 |-----------|-------|
 | Width | 5.100 µm |
 | Height | 3.150 µm |
-| Total Area | ~16.07 µm² |
+| Total Area | = 16.07 µm² |
 
 This falls within the expected range for a 6T SRAM cell at 180 nm.
 
@@ -179,15 +199,15 @@ The final layout is fabrication-compliant.
 
 ### Stability vs. Write Speed
 
-A high cell ratio (CR = 2) improves read stability. However, stronger pull-down NMOS makes writing harder, resulting in a higher write delay (~10.46 ns).
+A high cell ratio (CR = 2) improves read stability. However, stronger pull-down NMOS makes writing harder, resulting in a higher write delay (= 10.46 ns).
 
 ### Read Speed vs. Read Stability
 
-Strong pull-down NMOS enables fast read (~0.93 ns), but bitline interaction during read reduces stability, leading to a lower read SNM (~0.18 – 0.22 V).
+Strong pull-down NMOS enables fast read (=0.93 ns), but bitline interaction during read reduces stability, leading to a lower read SNM (~0.18 – 0.22 V).
 
 ### Power and Area vs. Layout Realism
 
-A compact layout (~16.07 µm²) was achieved using diffusion sharing. However, layout parasitics increase effective power consumption (~44.7 µW), creating a trade-off between area efficiency and realistic performance.
+A compact layout (=16.07 µm²) was achieved using diffusion sharing. However, layout parasitics increase effective power consumption (=44.72 µW), creating a trade-off between area efficiency and realistic performance.
 
 ### Initialization vs. Circuit Simplicity
 
@@ -200,8 +220,8 @@ An initial transient glitch (~0.6 V) arises due to undefined startup conditions.
 A complete 6T SRAM memory cell with sense amplifier and precharge circuitry was successfully designed and analyzed using 180 nm CMOS technology.
 
 - Achieved ~0.24 V hold SNM, ensuring good stability
-- Demonstrated fast read performance (~0.93 ns) and moderate write performance
-- Obtained realistic power consumption (~57 µW)
-- Implemented a DRC-compliant layout with optimized area (~16.07 µm²)
+- Demonstrated fast read performance (=0.93 ns) and moderate write performance
+- Obtained realistic power consumption (=57.12 µW)
+- Implemented a DRC-compliant layout with optimized area (=16.07 µm²)
 
 The project highlights key VLSI design trade-offs between stability, speed, power, and area, and provides a strong foundation in SRAM design and physical implementation.
