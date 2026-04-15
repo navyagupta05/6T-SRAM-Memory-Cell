@@ -56,9 +56,9 @@ Static Noise Margin (SNM) analysis was performed using butterfly curves derived 
 
 The designed 6T SRAM cell demonstrates:
 
-* ✔ Strong hold stability
-* ✔ Acceptable read stability
-* ✔ Expected 6T SRAM behavior
+* Strong hold stability
+* Acceptable read stability
+* Expected 6T SRAM behavior
 
 ---
 
