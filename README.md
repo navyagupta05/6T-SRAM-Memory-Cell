@@ -132,7 +132,7 @@ This ratio ensures easier write operations and improves write ability.
 | Type | Value |
 |------|-------|
 | Hold SNM | ~0.24 V |
-| Read SNM | ~0.18 – 0.22 V |
+| Read SNM | ~0.20 V |
 
 Extracted using the butterfly curve method in Excel.
 
